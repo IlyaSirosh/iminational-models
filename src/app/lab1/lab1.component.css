@@ -1,0 +1,110 @@
+:host{
+  display: flex;
+  flex-direction: column;
+  /*justify-content: flex-start;*/
+  align-items: center;
+  height: 100%;
+  width: 80%;
+}
+.lab-title{
+  padding: 30px 0;
+}
+
+.input{
+  display: flex;
+  align-items: center;
+}
+
+.run-button{
+  align-self: baseline;
+  margin-left: 20px;
+}
+
+.chart-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#map{
+  height: 500px;
+  width: 500px;
+}
+
+.integral-sign-form{
+  position: relative;
+
+  width: 20px;
+  height: 4em;
+
+  display: flex;
+  align-items: center;
+
+}
+
+.integral-sigh{
+  font-size: 4em;
+  font-weight: lighter;
+  user-select: none;
+}
+
+.x-boundary{
+  position: absolute;
+
+}
+
+.x-boundary > input{
+  width: 30px;
+  border: none;
+  background-color: transparent;
+  padding: 5px;
+
+}
+.x-boundary > input:focus{
+
+}
+
+.max-boundary{
+  top: -7px;
+  left: 10px;
+}
+
+.min-boundary{
+  bottom: -10px;
+  left: 5px;
+}
+
+.function-input{
+  border: none;
+  padding: 5px;
+  font-size: medium;
+  width: 60px;
+  min-width: 60px;
+  text-align: center;
+
+}
+
+.function-gain{
+  font-style: italic;
+  user-select: none;
+}
+
+.run-button{
+  min-width: 15px;
+  padding: 10px;
+  margin-left: 5px;
+  line-height: 10px;
+}
+
+.slider-container{
+  padding-top:  20px;
+  display: flex;
+  justify-content: center;
+}
+
+.result-container{
+  width: 50px;
+  padding: 5px;
+}

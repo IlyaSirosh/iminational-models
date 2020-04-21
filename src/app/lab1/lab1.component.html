@@ -1,0 +1,57 @@
+<div class="lab-title">
+  <h1>Computing Integral with Monte Carlo</h1>
+</div>
+<form class="input-container">
+    <div class="input">
+      <div class="integral-sign-form">
+        <div class="max-boundary x-boundary">
+          <input placeholder="b"
+                 [appReactOnDelay]="600" (run)="repaintChart()"
+                 [formControl]="maxBoundaryControl"
+                 class="">
+        </div>
+        <div class="min-boundary x-boundary">
+          <input placeholder="a"
+                 [appReactOnDelay]="600" (run)="repaintChart()"
+                 [formControl]="minBoundaryControl"
+                 class="">
+        </div>
+        <div class="integral-sigh">∫</div>
+      </div>
+      <div>
+        <input placeholder="f(x)"
+               onkeypress="this.style.width = ((this.value.length + 2) * 8) + 'px';"
+               class="function-input"
+               [appReactOnDelay]="700" (run)="repaintChart()"
+               [formControl]="functionControl">
+        <span class="function-gain">dx</span>
+      </div>
+      <div class="equal-button-container">
+        <button class="run-button" mat-flat-button color="basic" (click)="compute()">
+          =
+        </button>
+      </div>
+      <div class="result-container">
+        <div *ngIf="result">
+          {{result.result | number:'.0-3'}}
+        </div>
+      </div>
+    </div>
+    <div class="slider-container">
+      <mat-slider
+        thumbLabel
+        [displayWith]="formatLabel"
+        [formControl]="countControl"
+        tickInterval="100"
+        min="100"
+        max="10000"></mat-slider>
+    </div>
+</form>
+<div class="chart-container">
+    <div echarts [options]="options" id="map"></div>
+</div>
+
+
+
+
+
