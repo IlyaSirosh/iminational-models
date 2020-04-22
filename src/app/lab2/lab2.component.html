@@ -14,7 +14,6 @@
   <div class="slider-container">
     <mat-slider
       thumbLabel
-      [displayWith]="formatLabel"
       [formControl]="pointsControl"
       tickInterval="100"
       min="100"
@@ -25,8 +24,8 @@
 </div>
 <div class="result-info">
   <span *ngIf="actualArea">
-    Result = {{actualArea | number:'.0-3'}}.
-    Expected = {{expectedArea | number:'.0-3'}}
+    Result = {{actualArea | number:'.0-3'}} km2 <br>
+    Expected = {{expectedArea | number:'.0-3'}} km2
   </span>
 </div>
 <div class="map-container">

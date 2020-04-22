@@ -171,7 +171,7 @@ export class Lab2Component implements OnInit {
     console.log(`wsquare ${worldsquare} square ${squareArea} zoom ${zoom}`);
 
     const enhancedZoom = math.nthRoot(zoom, 2.3);
-    this.options.geo['zoom'] =  enhancedZoom < 4 ? 1 : enhancedZoom;
+    this.options.geo['zoom'] =  enhancedZoom < 2.5 ? 1 : enhancedZoom;
     // this.options.geo['zoom'] = 1;
   }
 

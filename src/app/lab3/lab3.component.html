@@ -1,0 +1,41 @@
+<div class="lab-title">
+  <h1>Option price with Monte Carlo</h1>
+</div>
+<form [formGroup]="formGroup"
+      (ngSubmit)="compute(formGroup.value)"
+      class="input-container">
+  <mat-form-field>
+    <mat-label>Current price</mat-label>
+    <input matInput formControlName="price">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Avg profit</mat-label>
+    <input formControlName="profit" matInput>
+    <div matSuffix>%/year</div>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Volatility</mat-label>
+    <input formControlName="volatility" matInput>
+        <div matSuffix>%</div>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Period</mat-label>
+    <input formControlName="time" matInput>
+        <div matSuffix>years</div>
+  </mat-form-field>
+  <mat-slider
+    formControlName="count"
+    thumbLabel
+    tickInterval="100"
+    [displayWith]="formatLabel"
+    min="100"
+    max="100000">
+  </mat-slider>
+  <button mat-flat-button color="primary"
+          type="submit">Compute</button>
+</form>
+<div class="result-container">
+  <h4 *ngIf="expectedPrice">
+    Expected price: {{expectedPrice | currency:'USD'}}
+  </h4>
+</div>

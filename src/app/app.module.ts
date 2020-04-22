@@ -18,10 +18,12 @@ import { Lab2Component } from './lab2/lab2.component';
 import {CountryService} from './lab2/country.service';
 import {HttpClientModule} from '@angular/common/http';
 import {MAT_SELECT_SCROLL_STRATEGY, MAT_SELECT_SCROLL_STRATEGY_PROVIDER, MatSelectModule} from '@angular/material/select';
+import { Lab3Component } from './lab3/lab3.component';
 
 const appRoutes: Routes = [
   {path: 'integral-monte-carlo', component: Lab1Component},
   {path: 'country-monte-carlo', component: Lab2Component},
+  {path: 'option-price-monte-carlo', component: Lab3Component},
   {path: 'home', component: HomeComponent},
   { path: '',
     redirectTo: '/home',
@@ -35,19 +37,20 @@ const appRoutes: Routes = [
     Lab1Component,
     HomeComponent,
     ReactOnDelayDirective,
-    Lab2Component
+    Lab2Component,
+    Lab3Component
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule,
     MatButtonModule,
     MatInputModule,
     RouterModule.forRoot(appRoutes),
     MatFormFieldModule,
     NgxEchartsModule,
-    ReactiveFormsModule,
-    FormsModule,
     MatIconModule,
     MatSliderModule,
     MatSelectModule,
