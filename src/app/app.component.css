@@ -1,6 +1,7 @@
 :host{
   display: flex;
   height: 100%;
+  width: 100%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -9,13 +10,16 @@
 
 .home-button{
   position: absolute;
-  align-self: flex-start;
+  /*align-self: flex-start;*/
   padding: 20px;
   top: 0;
   left: 0;
 }
 
 .author{
-  align-self: flex-end;
+  /*align-self: flex-end;*/
   padding: 20px;
+  position: absolute;
+  bottom: 0;
+  right: 0
 }

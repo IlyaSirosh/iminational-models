@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {CountryService} from './lab2/country.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'imitational-models';
+  constructor(private _: CountryService) {
+  }
 }

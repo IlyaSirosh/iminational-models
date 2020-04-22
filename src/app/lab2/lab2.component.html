@@ -1,0 +1,35 @@
+<div class="lab-title">
+  <h1>Country area with Monte Carlo</h1>
+</div>
+<div class="input-container">
+  <mat-form-field>
+    <mat-label>Country</mat-label>
+    <mat-select [formControl]="nameControl" (selectionChange)="selected(nameControl.value)">
+      <mat-option *ngFor="let country of countries"
+                  [value]="country">
+        {{country}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="slider-container">
+    <mat-slider
+      thumbLabel
+      [displayWith]="formatLabel"
+      [formControl]="pointsControl"
+      tickInterval="100"
+      min="100"
+      max="3000">
+    </mat-slider>
+    <button mat-flat-button color="primary" (click)="compute()">Run</button>
+  </div>
+</div>
+<div class="result-info">
+  <span *ngIf="actualArea">
+    Result = {{actualArea | number:'.0-3'}}.
+    Expected = {{expectedArea | number:'.0-3'}}
+  </span>
+</div>
+<div class="map-container">
+  <div echarts [options]="options" id="map">
+  </div>
+</div>

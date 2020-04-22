@@ -14,9 +14,14 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSliderModule} from '@angular/material/slider';
 import { ReactOnDelayDirective } from './react-on-delay.directive';
+import { Lab2Component } from './lab2/lab2.component';
+import {CountryService} from './lab2/country.service';
+import {HttpClientModule} from '@angular/common/http';
+import {MAT_SELECT_SCROLL_STRATEGY, MAT_SELECT_SCROLL_STRATEGY_PROVIDER, MatSelectModule} from '@angular/material/select';
 
 const appRoutes: Routes = [
   {path: 'integral-monte-carlo', component: Lab1Component},
+  {path: 'country-monte-carlo', component: Lab2Component},
   {path: 'home', component: HomeComponent},
   { path: '',
     redirectTo: '/home',
@@ -29,9 +34,11 @@ const appRoutes: Routes = [
     AppComponent,
     Lab1Component,
     HomeComponent,
-    ReactOnDelayDirective
+    ReactOnDelayDirective,
+    Lab2Component
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
@@ -42,9 +49,10 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     FormsModule,
     MatIconModule,
-    MatSliderModule
+    MatSliderModule,
+    MatSelectModule,
   ],
-  providers: [],
+  providers: [CountryService, MAT_SELECT_SCROLL_STRATEGY_PROVIDER],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
