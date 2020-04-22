@@ -46,7 +46,7 @@ export class Lab1Component implements OnInit {
       },
       grid: {
         show: true,
-        backgroundColor: '#faf7f7'
+        backgroundColor: '#fdfdfd'
       },
       yAxis: {
         show: true,
@@ -187,7 +187,7 @@ export class Lab1Component implements OnInit {
   }
 
   setMaxVisibleY(){
-    this.visibleY = math.max(15, this.maxY + 5);
+    this.visibleY = math.max(15, math.floor(this.maxY) + 5);
     this.options.yAxis['max'] = this.visibleY;
     this.options.series[4].data[1][1] = this.visibleY;
     this.options.series[3].data[1][1] = this.visibleY;
